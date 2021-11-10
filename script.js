@@ -20,6 +20,7 @@
 // }
 
 //2.Function Declaration
+//2.1
 // function Mahasiswa(nama, energy) {
 //     let mahasiswa = {};
 //     mahasiswa.nama = nama;
@@ -38,6 +39,32 @@
 // }
 // let alif = Mahasiswa('Alifudin', 10);
 // let niko = Mahasiswa('Niko', 20);
+
+//2.2
+// const methodMahasiswa = {
+//     makan: function (posrsi) {
+//         this.energy += posrsi;
+//         console.log(`halo ${this.nama}, Selamat makan!`);
+//     },
+//     main: function (jam) {
+//         this.energy -= jam;
+//         console.log('capekk ya, semangat');
+//     }
+// }
+// function Mahasiswa(nama, energy) {
+//     let mahasiswa = {};
+//     mahasiswa.nama = nama;
+//     mahasiswa.energy = energy;
+//     mahasiswa.makan = methodMahasiswa.makan;
+//     mahasiswa.main = methodMahasiswa.main;
+//     return mahasiswa;
+// }
+
+// let alif = Mahasiswa('Alifudin', 10);
+// let niko = Mahasiswa('Niko', 20);
+
+
+
 
 //3. Constructor Function
 // function Mahasiswa(nama, energy) {
@@ -60,3 +87,23 @@
 // let niko = new Mahasiswa('Niko', 20);
 
 //4. Object create
+// const methodMahasiswa = {
+//     makan: function (posrsi) {
+//         this.energy += posrsi;
+//         console.log(`halo ${this.nama}, Selamat makan!`);
+//     },
+//     main: function (jam) {
+//         this.energy -= jam;
+//         console.log('capekk ya, semangat');
+//     }
+// }
+// function Mahasiswa(nama, energy) {
+//     let mahasiswa = Object.create(methodMahasiswa);
+//     mahasiswa.nama = nama;
+//     mahasiswa.energy = energy;
+
+//     return mahasiswa;
+// }
+
+// let alif = Mahasiswa('Alifudin', 10);
+// let niko = Mahasiswa('Niko', 20);
