@@ -66,7 +66,7 @@
 
 
 
-//3. Constructor Function
+//3. Constructor Function nda ada let sama return
 // function Mahasiswa(nama, energy) {
 
 //     this.nama = nama;
@@ -107,3 +107,35 @@
 
 // let alif = Mahasiswa('Alifudin', 10);
 // let niko = Mahasiswa('Niko', 20);
+
+
+//Prototype
+// function Mahasiswa(nama, energy) {
+//     // let mthis = Object.create(Mahasiswa.prototype);
+//     this.nama = nama;
+//     this.energy = energy;
+// }
+// Mahasiswa.prototype.makan = function (porsi) {
+//     this.energy += porsi;
+//     return `Halo ${this.nama}, Selamatmakan`;
+// }
+// let alif = new Mahasiswa('alif', 10);
+
+//versi class
+// class Mahasiswa {
+//     constructor(nama, energi) {
+//         this.nama = nama;
+//         this.energi = energi;
+//     }
+//     makan(porsi) {
+//         this.energi += porsi;
+//         return `Halo ${this.nama}, Selamatmakan`;
+//     }
+// }
+// let alif = new Mahasiswa('alif', 10);
+
+
+let angka = [];
+let angka = new Array();
+
+
