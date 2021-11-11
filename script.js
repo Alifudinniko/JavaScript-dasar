@@ -135,7 +135,71 @@
 // let alif = new Mahasiswa('alif', 10);
 
 
-let angka = [];
-let angka = new Array();
+// let angka = [];
+// let angka = new Array();
 
 
+//2.1 Execution Context, Hoisting & Score
+
+// Hoisting
+// var nama = 'Sandhika';
+// console.log(nama);  V
+
+// console.log(nama); X
+// var nama = 'Sandhika';
+
+//creation phase pada Global Context
+//nama var = undefined
+//nama function = fn()
+// hoisting
+// window = global object
+// this = window
+//2 objek yang dibuat this sama objek/function
+
+// var nama = 'Alif';
+// var umur = 33;
+// function sayHello() {
+//     return `Halo,  nama saya ${nama}, saya ${umur} tahunn`;
+// }
+
+// Function membuat local execution context
+// yang didalamnya terdapat creation dan execution phase
+// window
+// arguments
+// hoisting
+
+var nama = 'Alif';
+var username = '@alifudinniko';
+//function (username) -> username = argumen 
+function cetakURL(username) {
+    //console.log(arguments[0]);
+    var instagramURL = 'http://instagram.com/';
+    return instagramURL + username;
+}
+console.log(cetakURL(username));
+console.log(cetakURL('@atalanisa', '@alifudinniko'));  //scope
+
+// function a() {
+//     console.log('ini a');
+//     function b() {
+//         console.log('ini b');
+//         function c() {
+//             console.log('ini c');
+//         }
+//         c();
+//     } b();
+// } a();
+
+//coba scope
+function satu() {
+    var nama = 'Alif';
+    console.log(nama);
+}
+function dua() {
+    console.log(nama);
+}
+console.log(nama);
+var nama = 'Erik';
+satu();
+dua('Doody');
+console.log(nama);
