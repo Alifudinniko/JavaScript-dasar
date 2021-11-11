@@ -266,14 +266,15 @@
 // console.log(a());
 // console.log(a());
 
-//contoh closure
-let add = (function () {
-    let counter = 0;
-    return function () {
-        return ++counter;
-    }
-})();
+// //contoh closure
+// let add = (function () {
+//     let counter = 0;
+//     return function () {
+//         return ++counter;
+//     }
+// })();
 
-console.log(add());
-console.log(add());
-console.log(add());
+// console.log(add());
+// console.log(add());
+// console.log(add());
+
