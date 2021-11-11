@@ -168,16 +168,16 @@
 // arguments
 // hoisting
 
-var nama = 'Alif';
-var username = '@alifudinniko';
-//function (username) -> username = argumen 
-function cetakURL(username) {
-    //console.log(arguments[0]);
-    var instagramURL = 'http://instagram.com/';
-    return instagramURL + username;
-}
-console.log(cetakURL(username));
-console.log(cetakURL('@atalanisa', '@alifudinniko'));  //scope
+// var nama = 'Alif';
+// var username = '@alifudinniko';
+// //function (username) -> username = argumen 
+// function cetakURL(username) {
+//     //console.log(arguments[0]);
+//     var instagramURL = 'http://instagram.com/';
+//     return instagramURL + username;
+// }
+// console.log(cetakURL(username));
+// console.log(cetakURL('@atalanisa', '@alifudinniko'));  //scope
 
 // function a() {
 //     console.log('ini a');
@@ -191,15 +191,89 @@ console.log(cetakURL('@atalanisa', '@alifudinniko'));  //scope
 // } a();
 
 //coba scope
-function satu() {
-    var nama = 'Alif';
-    console.log(nama);
-}
-function dua() {
-    console.log(nama);
-}
-console.log(nama);
-var nama = 'Erik';
-satu();
-dua('Doody');
-console.log(nama);
+// function satu() {
+//     var nama = 'Alif';
+//     console.log(nama);
+// }
+// function dua() {
+//     console.log(nama);
+// }
+// console.log(nama);
+// var nama = 'Erik';
+// satu();
+// dua('Doody');
+// console.log(nama);
+
+// 2.2 closure
+
+//lexical Scope
+// function init() {
+//     let nama = 'Alif';  //local Variable
+//     // let umur = 33;  //local Variable
+//     function tampilNama() {  //iner function(closure)
+//         console.log(nama); //akses ke parent variable
+//         // console.log(umur); //akses ke parent variable
+//     }
+//     // tampilNama(); //iner function
+//     return tampilNama;
+//     // console.dir(tampilNama); //ngecek di console
+// }
+// // init();
+
+// let panggilNama = init();
+// panggilNama();
+
+// function init() {
+//     function tampilNama(nama) {
+//         console.log(nama);
+//     }
+//     return tampilNama;
+// }
+// let panggilNama = init();
+// panggilNama('alif');
+
+//anonymus function
+// function init() {
+//     return function (nama) {
+//         console.log(nama);
+//     }
+//     return tampilNama;
+// }
+// let panggilNama = init();
+// panggilNama('alif');
+
+// function ucapkanSalam(waktu) {
+//     return function (nama) {
+//         console.log(`Halo ${nama}, Selamat ${waktu}, semoga harimu menyenangkan`);
+//     }
+// }
+// let selamatpagi = ucapkanSalam('pagi');
+// let selamatsiang = ucapkanSalam('siang');
+
+// console.dir(selamatpagi);
+// selamatpagi('Alif');
+
+// let add = function () {
+//     let counter = 0;
+//     return function () {
+//         return ++counter;
+
+//     }
+// }
+// let a = add();
+
+// console.log(a());
+// console.log(a());
+// console.log(a());
+
+//contoh closure
+let add = (function () {
+    let counter = 0;
+    return function () {
+        return ++counter;
+    }
+})();
+
+console.log(add());
+console.log(add());
+console.log(add());
