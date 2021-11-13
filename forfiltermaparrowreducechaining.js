@@ -29,6 +29,7 @@ const angka = [-1, 8, 9, 1, 4, 5, -5, -4, 2, 3, 9];
 // console.log(newAngka);
 
 
+
 //reduce
 //jumlahkan seluruh elemen pada array
 const newAngka = angka.reduce((accumulator, currentvalue) => accumulator + currentvalue, 5);
