@@ -97,7 +97,7 @@ const el =
 <span class="semester" > Semester : ${mhs.sms}</span>
 
 <h4> Mata Kuliah : </h4>    ${cetakMatkul(mhs.matakuliah)}  
-
+ 
 </div>
 `;
 
