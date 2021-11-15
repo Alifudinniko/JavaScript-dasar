@@ -1,7 +1,7 @@
 $('.search-button').on('click', function () {
 
     $.ajax({
-        url: 'http://www.omdbapi.com/?i=tt3896198&apikey=3a8df36d&s=' + $('.input-keywoard').val(),
+        url: 'http://www.omdbapi.com/?i=tt3896198&apikey=3a8df36d&s=' + $('.input-keyword').val(),
         success: result => {
             console.log(result);
 

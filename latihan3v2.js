@@ -1,43 +1,3 @@
-// $('.search-button').on('click', function () {
-
-//     $.ajax({
-//         url: 'http://www.omdbapi.com/?i=tt3896198&apikey=3a8df36d&s=' + $('.input-keywoard').val(),
-//         success: result => {
-//             console.log(result);
-
-//             const movies = result.Search;
-//             // console.log(movies);
-
-//             let cards = '';
-//             movies.forEach(m => {
-//                 cards += showCards(m);
-//             });
-//             //Jquery tolong ccarikan saya element movie lalu timpa pakai data cards
-//             $('.movie-container').html(cards);
-
-
-//             //Ketika Tombol detail di klik 
-//             $('.modal-detail-button').on('click', function () {
-//                 // console.log($(this).data('imdbid'));
-
-//                 $.ajax({
-//                     url: 'http://www.omdbapi.com/?apikey=3a8df36d&i=' + $(this).data('imdbid'),
-//                     success: m => {
-//                         const moviDetail = showCardsid(m);
-//                         $('.modal-body').html(moviDetail);
-//                     },
-//                     error: (e) => {
-//                         console.log(e.responseText);
-//                     }
-//                 });
-//             });
-//         },
-//         error: (e) => {
-//             console.log(e.responseText);
-//         }
-//     });
-
-// });
 
 // Fetch - - - - VANILA JAVASCRIPT
 
@@ -45,7 +5,7 @@ const searchButton = document.querySelector('.search-button');
 searchButton.addEventListener('click', function () {
 
     const inputKeyword = document.querySelector('.input-keyword');
-    fetch('http://www.omdbapi.com/?i=tt3896198&apikey=3a8df36d&s=' + inputKeyword.value)
+    fetch('http://www.omdbapi.com/?apikey=3a8df36d&s=' + inputKeyword.value)
         .then(response => response.json())
         .then(response => {
             const movies = response.Search;
@@ -60,20 +20,17 @@ searchButton.addEventListener('click', function () {
     const modalDetailButton = document.querySelectorAll('.modal-detail-button');
     modalDetailButton.forEach(btn => {
         btn.addEventListener('click', function () {
-            const imdbid = this.dataset.imdbid;
-            console.log(imdbid);
-            // fetch('http://www.omdbapi.com/?apikey=3a8df36d&i=' + imdbid)
-            //     .then(response => response.json())
-            //     .then(m => {
-            //         const moviDetail = showCardsid(m);
-            //         console.log(moviDetail);
-            //         const modalBody = document.querySelector('.modal-body');
-            //         modalBody.innerHTML = moviDetail;
-
-            //     });
+            const dataid = this.dataset.imdbid;
+            console.log(dataid);
+            fetch('http://www.omdbapi.com/?apikey=3a8df36d&i=' + dataid)
+                .then(response => response.json())
+                .then(m => {
+                    const moviDetail = showCardsid(m);
+                    const modalBody = document.querySelector('.modal-body');
+                    modalBody.innerHTML = moviDetail;
+                });
         });
     });
-
 
 });
 
